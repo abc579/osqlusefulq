@@ -20,7 +20,6 @@ SELECT s.osuser
  WHERE p.addr = s.paddr
    AND p.inst_id = s.inst_id
    AND NVL(s.username, 'SYS') NOT IN ('SYS', 'SYSTEM', 'SYSMAN', 'DBSNMP')
-   AND UPPER(s.username) LIKE '%FONDOS%'
    AND s.type != 'BACKGROUND'
 ORDER BY 6 DESC
         ,1
