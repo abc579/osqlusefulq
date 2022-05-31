@@ -1,12 +1,11 @@
 /* Check blocks between users. */
 SELECT s1.username || '@' || s1.machine || ' ( SID=' || s1.sid || ' SERIAL=' ||
-       s1.serial# || ' ) esta bloqueando ' || s2.username || '@' || s2.machine ||
+       s1.serial# || ' ) is blocking ' || s2.username || '@' || s2.machine ||
        ' ( SID=' || s2.sid || ' SERIAL=' || s2.serial# || ' ) ' AS bloqueos
   FROM v$lock    l1
       ,v$session s1
       ,v$lock    l2
       ,v$session s2e
-
  WHERE s1.sid = l1.sid
    AND s2.sid = l2.sid
    AND l1.block = 1
