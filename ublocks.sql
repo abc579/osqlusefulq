@@ -1,7 +1,7 @@
 /* Check blocks between users. */
 SELECT s1.username || '@' || s1.machine || ' ( SID=' || s1.sid || ' SERIAL=' ||
        s1.serial# || ' ) is blocking ' || s2.username || '@' || s2.machine ||
-       ' ( SID=' || s2.sid || ' SERIAL=' || s2.serial# || ' ) ' AS bloqueos
+       ' ( SID=' || s2.sid || ' SERIAL=' || s2.serial# || ' ) ' AS blocks
   FROM v$lock    l1
       ,v$session s1
       ,v$lock    l2
